@@ -2,6 +2,12 @@
 
 FIXME: description
 
+## Build with command
+
+```lein new jumski/clojure-sandbox```
+
+(just to remember how to create personal namespaces)
+
 ## Installation
 
 Download from http://example.com/FIXME.
