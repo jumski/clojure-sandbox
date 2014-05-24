@@ -2,7 +2,7 @@
   "src/jumski/clojure_sandbox.clj": {"type": "src"},
   "src/jumski/clojure_sandbox/*.clj": {
     "type": "src",
-    "template": "(ns jumski/clojure-sandbox.{hyphenate})"
+    "template": "(ns jumski.clojure-sandbox.{hyphenate})"
   },
   "test/jumski/clojure_sandbox_test.clj": {"type": "test"},
   "test/jumski/clojure_sandbox/*_test.clj": {
@@ -10,7 +10,7 @@
     "template": [
       "(ns jumski/clojure-sandbox.{hyphenate}-test",
       "  (:require [clojure.test :refer :all]",
-      "            [jumski/clojure-sandbox.{hyphenate} :refer :all]))"
+      "            [jumski.clojure-sandbox.{hyphenate} :refer :all]))"
     ]
   },
   "project.clj": {"type": "project"},
