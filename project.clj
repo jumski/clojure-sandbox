@@ -6,5 +6,5 @@
   :dependencies [[org.clojure/clojure "1.5.1"]]
   :main ^:skip-aot jumski.clojure-sandbox
   :target-path "target/%s"
-  :profiles {:uberjar {:aot :all}}
-  :main jumski.clojure-sandbox)
+  :profiles {:uberjar {:aot :all}})
+  ;; :main jumski.clojure-sandbox)
