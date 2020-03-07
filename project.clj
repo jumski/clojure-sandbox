@@ -3,8 +3,6 @@
   :url "http://example.com/FIXME"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
-  :dependencies [[org.clojure/clojure "1.5.1"]]
-  :main ^:skip-aot jumski.clojure-sandbox
-  :target-path "target/%s"
-  :profiles {:uberjar {:aot :all}})
-  ;; :main jumski.clojure-sandbox)
+  :dependencies [[org.clojure/clojure "1.10.0"]]
+  :repl-options {:init-ns jumski.clojure-sandbox}
+  :main jumski.clojure-sandbox)
