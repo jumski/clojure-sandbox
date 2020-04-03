@@ -12,19 +12,21 @@
 ; true => La.Lb.a
 (def T
   (L a. b. a))
-(is (= :first (T :first :second)))
 
 ; false => La.Lb.b
 (def F
   (L a. b. b))
-(is (= :second (F :first :second)))
 
+(testing "T and F"
+  (is (= :first (T :first :second)))
+  (is (= :second (F :first :second))))
 
 (def ->bool
   "Helper function that evaluates boolean value passing it clojure booleans."
   (L f. (f true false)))
-(is (->bool T))
-(is (not (->bool F)))
+(testing "->bool"
+  (is (->bool T))
+  (is (not (->bool F))))
 
 ;;; LOGIC
 ;;; Logic is defined as composition of T and F choices
