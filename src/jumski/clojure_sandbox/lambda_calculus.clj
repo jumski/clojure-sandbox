@@ -1,9 +1,6 @@
 (ns jumski.clojure-sandbox.lambda-calculus
   (:require [clojure.test :refer [is testing]]))
 
-;;; Based on https://dzone.com/articles/lambda-calculus-in-clojure-part-1
-;;; Adapted their macro so it is able to accept multiple argument names without nesting
-
 (defmacro L
   "Builds a anonymous function definition based on passed forms.
   Forms which name ends with a dot will be used as arguments to that function,
@@ -11,7 +8,9 @@
 
   Examples:
   (L a. b. a)       ;=> (fn [a b] a)
-  (L p. q. (p q q)) ;=> (fn [p q] (p q q))"
+  (L p. q. (p q q)) ;=> (fn [p q] (p q q))
+
+  Adapted from https://dzone.com/articles/lambda-calculus-in-clojure-part-1"
   [& forms]
   (letfn [(is-arg? [form] (and (symbol? form)
                                (= \. (last (name form)))))
@@ -23,10 +22,12 @@
           args (map normalize-arg args)]
       `(fn [~@args] ~@body))))
 
-;;; BOOLEANS
-; T(rue) and F(alse)
-; Booleans are defined in terms of a choice
-; True will return the first choice and False the other
+;;; CHURCH BOOLEANS
+;;; https://dzone.com/articles/lambda-calculus-in-clojure-part-1
+
+;; T(rue) and F(alse)
+;; Booleans are defined in terms of a choice
+;; True will return the first choice and False the other
 
 ; true => La.Lb.a
 (def T
@@ -88,3 +89,5 @@
 (testing "If"
   (is (= :first (If T :first :second)))
   (is (= :second (If F :first :second))))
+
+;;; CHURCH NUMERALS
